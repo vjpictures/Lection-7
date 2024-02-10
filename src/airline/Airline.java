@@ -22,7 +22,7 @@ public class Airline {
         aircrafts.add(aircraft);
     }
 
-    public void calculateTotalCargoPassengerCapacity() {
+    public void printTotalCargoPassengerCapacity() {
         int totalPassengerCapacity = 0;
         int totalCargoCapacity = 0;
         for (Aircraft aircraft : aircrafts) {

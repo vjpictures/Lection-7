@@ -1,19 +1,12 @@
 package ipaddress;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class IPAddress {
 
-    public static boolean regEx(String ip) {
-
-        Pattern ptn = Pattern.compile("^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$");
-        Matcher mtch = ptn.matcher(ip);
-        return mtch.find();
+    public static boolean regEx(String input) {
+        return input.matches("((0|1\\d{0,2}|2([0-4][0-9]|5[0-5]))\\.){3}(0|1\\d{0,2}|2([0-4][0-9]|5[0-5]))");
     }
 
     public static void main(String[] args) {
-
         System.out.println("127.0.0.1 " + IPAddress.regEx("127.0.0.1"));
         System.out.println("255.255.255.253 " + IPAddress.regEx("255.255.255.253"));
         System.out.println("100.99.44.2 " + IPAddress.regEx("100.99.44.2"));
